@@ -114,7 +114,7 @@ h1,
 
 #circleImg {
     height: 15rem;
-    width: 14.5em;
+    width: 15em;
 
 }
 
@@ -135,11 +135,28 @@ h1,
     font-size: 4em;
 }
 
+
 #button {
     text-align: center;
     padding-top: 2rem;
     padding-bottom: 2rem;
 
+}
+
+
+/**text */
+
+.text1, .text2, .text3 {
+    font-family: 'Outfit', sans-serif;
+
+}
+.text1, .text2{
+    font-size:13px;
+    font-weight: bold;
+}
+.text3{
+    font-size: 10px;
+    opacity: 0.5;
 }
 
 .button {

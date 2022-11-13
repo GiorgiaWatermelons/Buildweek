@@ -28,45 +28,69 @@
       <div id="threeMainBlocks">
         <div class="result">
           <p class="title">Correct</p>
-          <p id="percR">66.7%</p>
-          <p id="numberR">4/6 questions</p>
+          <p id="percR">uu%</p>
+          <p id="numberR">?? questions</p>
         </div>
 
         <div id="circleImg">
           <!--CERCHIO CON SVG-->
           <svg id="circle">
             <circle
+              id="unsuccess-value"
               r="100"
               cx="50%"
               cy="50%"
               stroke="#D20094"
               fill="none"
-              stroke-width="25"
+              stroke-width="35"
               stroke-linecap="round"
               stroke-dasharray="880, 880"
             ></circle>
+            <circle
+            id="success-value"
+            r="100"
+            cx="50%"
+            cy="50%"
+            stroke="#00FFFF"
+            fill="none"
+            stroke-width="35"
+            stroke-linecap="round"
+            stroke-dasharray="880, 880"
+          ></circle>
+
+
+
+
+            <!--text-->
             <text
+            class="text1"
+              fill="#ffffff"
+              x="50%"
+              y="32%"
+              alignment-baseline="middle"
+              text-anchor="middle"
+              
+            >
+              Congratulations!
+            </text>
+            <text class="text2"
+              fill="#00FFFF"
+              x="50%"
+              y="38%"
+              alignment-baseline="middle"
+              text-anchor="middle"
+            >
+              You passed the exam.
+            </text>
+            <text class="text3"
               fill="#ffffff"
               x="50%"
               y="50%"
               alignment-baseline="middle"
               text-anchor="middle"
-              font-size="20"
-              font-family="'Outfit', sans-serif"
             >
-              Kitty Cat
-            </text>
-            <circle
-              id="success-value"
-              r="100"
-              cx="50%"
-              cy="50%"
-              stroke="#00FFFF"
-              fill="none"
-              stroke-width="25"
-              stroke-linecap="round"
-              stroke-dasharray="880, 880"
-            ></circle>
+              
+          </text>
           </svg>
           <div style="position: relative">
             <div id="circle-percentage"></div>
@@ -74,9 +98,9 @@
         </div>
 
         <div class="result">
-          <p class="title">Correct</p>
-          <p id="percW">66.7%</p>
-          <p id="numberW">4/6 questions</p>
+          <p class="title">Wrong</p>
+          <p id="percW">uu%</p>
+          <p id="numberW">?? questions</p>
         </div>
       </div>
 
