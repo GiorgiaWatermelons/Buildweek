@@ -1,82 +1,258 @@
 body{
-    background-image: url("../assets/bg.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    box-sizing: border-box;
+  
+    background-color: black;
+       
 }
 
-main{
-text-align: center; 
+/* CONTAINER PRINCIPALE, TITOLI */
+
+.container{
+    background-image: url('/img/bg.jpg');
+        margin-left:auto;
+        margin-right:auto;
+        width:970px;  
+        height: auto;
+
 }
+
+.logo{
+    padding-top: 2%;
+    margin-left: 2%;
+    width:150px;
+}
+
+h1, h2, h3{
+    font-family:'Outfit', sans-serif;
+    text-align: center;
+    color: white;
+}
+
 
 h1{
-color: white;
-    font-family: 'Outfit', sans-serif;
-    height: 40px;
-    font-size: 40px;
-    font-weight: bold;
-    padding-bottom: none;
-    margin-bottom: 0;
+    font-size:60px;
+    line-height: 0.5;
     
 }
 
-p{
+.sottotitolo{
+    color: rgba(255, 255, 255, 0.799);
+    font-size: 25px;
+    font-weight: 200;
+    line-height: 0;
+    padding-bottom: 30px;
+}
+
+h3{
+    font-size: 45px;
+    font-weight: 200;
+}
+
+
+
+
+
+/*####### CODICE SPECIFICO PER LA PAGINA RESULTS.HTML ######*/
+
+.percentage{
     color: white;
-    font-family: 'Inter', sans-serif;
-    font-size: 16 px;
-    padding-left: 230px;
-    padding-right: 230px;
+    font-size: 50px;
+    font-weight: 600;
+    font-family:'Outfit', sans-serif;
+    margin-top: -50px;
 }
 
-#p{
-    margin-top: 0;
+.questions{
+    color: rgba(255, 255, 255, 0.711);
+    font-family:'Outfit', sans-serif;
+    font-size: 20px;
+    margin-top: -50px;
 }
 
-header{
-   padding-top: 2rem; 
-   padding-left: 4rem;
-   padding-bottom: 2rem;
-}
 
-#logo{
-    height: 2rem;
-}
+/* BLOCCHI PERCENTUALI (1,2,3) */
 
-#formContainer{
-    padding-top: 2rem;
+#block1{
+    text-align: center;
+    float: left;
+    width:300px;
+    height: 360px;
+    padding-top: 60px;
     
+}
+.block2{
+    text-align: center;
+    float: left;
+    width:360px;
+    height: 350px;
+   
+}
+#block3{
+    text-align: center;
+    float: left;
+    width: 300px;
+    height: 360px;
+    padding-top: 60px;
+}
+ 
+                                
+/* CERCHIO SVG */
+
+#circle {
+  width: 100%;
+  height: 100%;
+  transform: rotate(50deg);
+  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.667));
+}
+
+#circle-text {
+  position: absolute;
+  top: -16em;
+  left: 0.05em;
+  right: 0;
+  font-family: 'Inter', sans-serif;
+  margin-left: 80px ;
+  margin-right: 80px ;
+   
+}
+
+/* TESTO DENTRO CERCHIO */
+
+.innerText{
+    font-size: 18px;
+    line-height: 0;
+    font-weight: 500;
+    color: white;
+}
+
+#innerText2{
+    color: #00ffffdc;
+    text-shadow: 2px 2px black;
+}
+
+.innerDescription{
+    
+    padding-top: 15px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.666);
+
+}
+
+#innerDescription2{
+    margin-top: -25px;
+}
+
+/* BUTTON RATE-US */
+
+.divRateus{
+    text-align: center;
+    padding-bottom: 55px; 
+    
+}
+
+.button{
+
+     width: 200px;
+     height: 55px;
+     border: 2px solid  white;
+     background: transparent;
+     font-size: 20px;
+     font-family: 'Outfit', sans-serif;
+     font-weight: 600;
+     color: white;
+     box-shadow: 1px 1px 50px 5px rgb(43, 22, 128);
+     transition-duration: 0.4s;
+}
+
+.button:hover{
+    background-color: rgba(245, 245, 245, 0.282);
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+
+
+/*###### FINE CODICE RESULTS.HTML ########*/
+
+
+/*###### CODICE SPECIFICO FEEDBACK.HTML ######*/
+.containerFeedback{
+    background-image: url("../assets/bg.jpg");
+        margin-left:auto;
+        margin-right:auto;
+        width:100vw;  
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        box-sizing: border-box;
+        
+}
+
+#div1Feedback{
+    font-family:'Outfit', sans-serif;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#h1Feedback{
+padding-top: 1.5rem;
+padding-block: 3rem;
+font-weight: bold;
+}
+.pFeedback{
+color: rgba(255, 255, 255, 0.799);
+font-size: 25px;
+font-weight: 200;
+line-height: 1;
+padding-bottom: 30px;
 }
 
 #feedbackText{
-     color: gray;
-     font-family: 'Inter', sans-serif;
-     border-bottom-style: solid;
-     border-bottom-color:  #d20094;
-     border-top: none;
-     border-right: none;
-     border-left: none;
-     border-image: none;
-     background-color: transparent;
-     width: 55% ;
-     line-height: 1rem;
-     padding: 0;
+    color: gray;
+    font-family: 'Inter', sans-serif;
+    border-bottom-style: solid;
+    border-bottom-color:  #d20094;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-image: none;
+    background-color: transparent;
+    width: 55% ;
+    line-height: 1rem;
+    padding: 0;
 
 }
 #tastoInvia{
-    display: none;
+   display: none;
 }
 
 #infoButton{
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    font-size: 18px;
-    background-color: #00ffff;
-    color:rgb(41 , 1,27);
-    height: 2.7rem;
-    width: 10rem;
-    border: none;
-    margin-top: 35px;
+   font-family: 'Inter', sans-serif;
+   font-weight: bold;
+   font-size: 18px;
+   background-color: #00ffff;
+   color:rgb(41 , 1,27);
+   height: 2.7rem;
+   width: 10rem;
+   border: none;
+   margin-top: 35px;
 }
 
+#infoButton:hover {
+    transform: scale(1.1, 1.1);
+    box-shadow: 1px 1px 40px #0ff;
+}
 
+#stelle{
+    align-items: center;
+}
