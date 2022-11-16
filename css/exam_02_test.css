@@ -159,6 +159,7 @@ user-select: none; /* Standard syntax */
 background:linear-gradient(to bottom, #d20093 5%, #8a007c 100%);
 background-color:#d20093;
 }
+
 .answer:active {
 position:relative;
 top:1px;
@@ -183,3 +184,23 @@ user-select: none; /* Standard syntax */
    
 }
 
+/**animazione delle CTA delle risposte */
+
+.answer {
+  width: 220px;
+  height: 60px;
+  margin-left: 300px;
+  color: black;
+  background-color: #0ff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: 1px solid black;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.answer:hover {
+  transform: scale(1.1, 1.1);
+  box-shadow: 1px 1px 40px #0ff;
+}

@@ -75,3 +75,21 @@ cerchio.setAttribute('stroke-dasharray', `${risposteCorretteDate * 88}, 880`)
 
 
 
+
+
+
+
+
+//cambio il testo dentro il cerchio in caso l'esame non sia superato
+if (risposteCorretteDate <= 5) {
+   let textArr = document.getElementsByClassName("textG");
+   textArr[0].innerHTML = "Shame on you!!";
+   textArr[1].innerHTML = "You failed the exam";
+   textArr[1].style = "margin-top: 4.5rem";
+   textArr[1].style.color = "#D20094";
+   textArr[2].innerHTML = "";
+   textArr[3].innerHTML = "";
+   
+}
+
+

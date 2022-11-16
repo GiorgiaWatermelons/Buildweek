@@ -235,6 +235,67 @@ eval(Mariello.charAt(5))
 
 
 //orologio
+const countdownNumberEl = document.getElementById("countdown-number");
+let countdown = 30;
+
+
+
+
+
+
+countdownNumberEl.textContent = countdown;
+
+let g=document.getElementById("circleGiorgia");
+
+
+g.style.animation = "countdown 30s linear infinite forwards";
+
+
+
+for (let a of answers) {
+
+  a.addEventListener("mousedown", function () { 
+    countdown = 30;
+    resetAnimation();
+    //c'è già un event listener che attiva scegliEMostraDomanda() attaccato ai CTA
+  });
+ }
+
+
+setInterval(gestioneOrologio, 1000);
+
+function gestioneOrologio() {
+  /*
+  *1) verifica se countdown è minore di 1, se sì resetta il countdown, altrimenti lo diminuisce di 1
+  *2) se il countdown è 30 resetta l'animazione del cerchio (e toglie la domanda dall'array e mostra la domanda successiva)
+  *
+  */
+
+  countdown = --countdown < 1 ? 30 : countdown;
+  countdownNumberEl.textContent = countdown;
+    
+  
+  if (countdown == 30) {
+    console.log("tempo scaduto");
+      rimuoviDomanda(domanda, questions);
+    console.log(questions);
+    resetAnimation();
+    scegliEMostraDomanda(questions);
+    }
+}
+
+function resetAnimation() { 
+  g.style.animation = "";
+    setTimeout(function () { g.style.animation = "countdown 30s linear infinite forwards" }, 1);
+}
+
+
+
+document.querySelector("#blue circle").classList.add = "animation";
+
+
+
+
 
 // TIPS:
 

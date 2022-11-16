@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/exam_02_test.css" />
+    <link rel="stylesheet" href="css/temp.css" />
     <title>Test Page</title>
   </head>
 
@@ -26,93 +27,31 @@
 
         <!------------------TIMER-------------------------->
 
-        <div id="circleImgTimer">
-          <!--CERCHIO CON SVG-->
-          <svg id="circleTimer">
-            <circle
-              id="circleWhite"
-              r="70"
-              cx="50%"
-              cy="50%"
-              stroke="#cccc"
-              fill="none"
-              stroke-width="20"
-              stroke-linecap="butt"
-              stroke-dasharray="880, 880"
-            ></circle>
-            <circle
-              id="circleBlue"
-              r="70"
-              cx="50%"
-              cy="50%"
-              stroke="#00FFFF"
-              fill="none"
-              stroke-width="20"
-              stroke-linecap="butt"
-              stroke-dasharray="88, 880"
-            ></circle>
-            <!--text-->
-            <text
-              class="textFixed1"
-              fill="#ffffff"
-              x="50%"
-              y="32%"
-              alignment-baseline="middle"
-              text-anchor="middle"
-            >
-              SECONDS
-            </text>
-
-            <text
-              class="textSeconds"
-              fill="#ffffff"
-              x="50%"
-              y="51%"
-              alignment-baseline="middle"
-              text-anchor="middle"
-            >
-              16
-            </text>
-            <text
-              class="textFixed2"
-              fill="#ffffff"
-              x="50%"
-              y="65%"
-              alignment-baseline="middle"
-              text-anchor="middle"
-            >
-              REMAINING
-            </text>
+        <div id="orologio">
+          <svg id="bg-trasp">
+            <circle id="giorgia" r="60" cx="70" cy="70"></circle>
           </svg>
+          <svg id="blue">
+            <circle id="circleGiorgia" r="60" cx="70" cy="70"></circle>
+          </svg>
+
+          <span class="timer-text">SECONDS</span>
+          <div id="countdown-number"></div>
+          <span class="timer-text">REMAINING</span>
         </div>
-
-        <!--
-
-        /*<figure class="timer">
-          <div id="seconds">SECONDS</div>
-          <div id="number">16</div>
-          <div id="remaining">REMAINING</div>
-          <svg class="progress-ring" height="200" width="200">
-            <circle class="progress-ring__circle"/>
-          </svg>
-        </figure>
-----------------TIMER-------------------------->
       </div>
 
       <!------------------QUESTION TEX-------------------------->
       <div id="questiontext">How can I create a checkbox in HTML?</div>
 
-        <!------------------QUESTION BOX-------------------------->
-        <div class="questionbox">
-          
-
-          <!------------------BUTTON-------------------------->
-          <span class="answer">answer 1</span>
-          <span class="answer">answer 2</span>
-          <span class="answer">answer 3</span>
-          <span class="answer">answer 4</span>
-        </div>
-    
+      <!------------------QUESTION BOX-------------------------->
+      <div class="questionbox">
+        <!------------------BUTTON-------------------------->
+        <span class="answer">answer 1</span>
+        <span class="answer">answer 2</span>
+        <span class="answer">answer 3</span>
+        <span class="answer">answer 4</span>
+      </div>
 
       <!------------------FOOTER-------------------------->
       <div class="footer">QUESTION 1/10</div>
