@@ -1,13 +1,23 @@
 body{
   
-    background-color: black;
-       
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    background-image: url('/img/bg.jpg')
+    
 }
+.logo{
+    padding-top: 3%;
+    padding-left: 3%;
+    width:150px;
+    
+}
+
 
 /* CONTAINER PRINCIPALE, TITOLI */
 
 .container{
-    background-image: url('/img/bg.jpg');
+    
         margin-left:auto;
         margin-right:auto;
         width:970px;  
@@ -15,11 +25,6 @@ body{
 
 }
 
-.logo{
-    padding-top: 2%;
-    margin-left: 2%;
-    width:150px;
-}
 
 h1, h2, h3{
     font-family:'Outfit', sans-serif;
@@ -43,7 +48,7 @@ h1{
 }
 
 h3{
-    font-size: 45px;
+    font-size: 60px;
     font-weight: 200;
 }
 
@@ -53,15 +58,15 @@ h3{
 
 /*####### CODICE SPECIFICO PER LA PAGINA RESULTS.HTML ######*/
 
-.percentage{
+#percentageGiuste, #percentageWrong{
     color: white;
     font-size: 50px;
     font-weight: 600;
     font-family:'Outfit', sans-serif;
-    margin-top: -50px;
+    margin-top: -65px;
 }
 
-.questions{
+#questions, #questions2{
     color: rgba(255, 255, 255, 0.711);
     font-family:'Outfit', sans-serif;
     font-size: 20px;

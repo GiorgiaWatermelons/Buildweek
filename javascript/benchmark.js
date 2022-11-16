@@ -94,128 +94,104 @@ const questions = [
   },
 ];
 
+// ##### INIZIO CODICE #####
+
+//##### BENCHMARK.HTML #####
+
 let questionText = document.getElementById("questiontext");
-let answers = document.getElementsByClassName("button");
-let risposteCorretteDate = 0;
+let answers = document.getElementsByClassName("answer");
+window.risposteCorretteDate = 0;
 let nDomande = 10;
 let nDomanda = 0;
+let domanda;
+
+//##### USO DELLE FUNZIONI PER FUNZIONAMENTO DELLA PAGINA #####
+
+scegliEMostraDomanda(questions);
+
+for (let a of answers) {
+  a.addEventListener("mousedown", function () {
+    if (a.innerHTML == domanda.correct_answer) {
+      addTorisposteCorretteDate();
+    }
+    rimuoviDomanda(domanda, questions);
+    console.log(questions);
+    scegliEMostraDomanda(questions);
+  });
+}
+
+//##### DICHIARAZIONE DELLE FUNZIONI ######
+
+function getIndiceRispostaEsatta(q) {
+  //ritorna l'indice del button che contiene la risposta esatta
+  for (let i = 0; i < 4; i++) {
+    if (answers[i].innerHTML == q.correct_answer) {
+      return i;
+    }
+  }
+}
+
+function addTorisposteCorretteDate() {
+  console.log("Esatto!");
+  risposteCorretteDate += 1;
+}
+
+function rimuoviDomanda(q, arr) {
+  //rimuove q da arr
+
+  for (let p of arr) {
+    if (p.question == q.question) {
+      arr.splice(arr.indexOf(p), 1);
+    }
+  }
+}
 
 function scegliEMostraDomanda(arr) {
+  //mostra una domanda casuale di arr nella pagina e aggiunge 1 a nDomanda
 
-
-
-  
   nDomanda += 1;
-  document.getElementsByClassName("footer")[0].innerHTML = `QUESTION ${nDomanda}/10`;
-  if (nDomanda > 10) {
-    // window.location.href = "results.html";
+
+  if (nDomanda == 11) {
+
+    document.cookie = `name=${risposteCorretteDate}`;
+    window.location.href = "results.html";
   }
+  for (let a of answers) {
+    //idea di Simona:
+    //serve a resettare la visibilità nel caso la domanda precedente sia boolean (vedi l'else)
+    a.style.visibility = "visible";
+  }
+  //sistemo il div footer
 
-  let rnd = Math.round(Math.random() * (arr.length - 1)); //produco un numero casuale per scegliere dall'array delle domande
-  let q = arr[rnd];
-  questionText.innerHTML = q.question;
-  if (q.type == "multiple") {
-    console.log("sei nel blocco multiple");
-    //faccio comparire le risposte
+  document.getElementsByClassName(
+    "footer"
+  )[0].innerHTML = `QUESTION ${nDomanda}/10`;
+  //scelgo una domanda e sistemo il testo domanda
+  let rnd = Math.round(Math.random() * (arr.length - 1));
+  domanda = arr[rnd]; //domanda contiene la domanda attuale!
+  questionText.innerHTML = domanda.question;
+
+  //sistemo le risposte
+  if (domanda.type == "multiple") {
+    //caso multiple
+    //console.log("sei nel blocco multiple");
     let rndArray = withoutClones(4);
-    answers[rndArray[0]].innerHTML = q.correct_answer;
-    answers[rndArray[1]].innerHTML = q.incorrect_answers[0];
-    answers[rndArray[2]].innerHTML = q.incorrect_answers[1];
-    answers[rndArray[3]].innerHTML = q.incorrect_answers[2];
-
-    //metto gli event listener sui buttons
-
-    //il button che contiene la risposta corretta
-
-    let j = 0;
-    for (let i = 0; i < 4; i++) {
-      if (answers[i].innerHTML == q.correct_answer) {
-        j = i;
-        answers[i].addEventListener("mousedown", function () {
-          risposteCorretteDate += 1;
-          arr.splice(rnd, 1);
-          scegliEMostraDomanda(arr);
-          return 0;
-        });
-      }
-    }
-    //i buttons che contengono le risposte sbagliate
-    for (let i = 0; i < 4; i++) {
-      if (i != j) {
-        answers[i].addEventListener("mousedown", function () {
-          arr.splice(rnd, 1);
-          scegliEMostraDomanda(arr);
-          return 0;
-        });
-      }
-    }
+    answers[rndArray[0]].innerHTML = domanda.correct_answer;
+    answers[rndArray[1]].innerHTML = domanda.incorrect_answers[0];
+    answers[rndArray[2]].innerHTML = domanda.incorrect_answers[1];
+    answers[rndArray[3]].innerHTML = domanda.incorrect_answers[2];
   } else {
-    console.log("sei nel blocco boolean");
-    //faccio comparire le risposte
+    //caso boolean
+    //console.log("sei nel blocco boolean");
     answers[2].style.visibility = "hidden";
     answers[3].style.visibility = "hidden";
     answers[0].innerHTML = "False";
     answers[1].innerHTML = "True";
-
-    //metto gli event listener sui buttons
-
-    let j = 0;
-     
-    for (let b of answers) { 
-      b.addEventListener("mousedown", function () {
-        for (let a of answers) { 
-          a.style.visibility="visible";
-        }
-       });
-    }
-
-
-    for (let i = 0; i < 2; i++) {
-      if (answers[i].innerHTML == q.correct_answer) {
-        j = i;
-        answers[i].addEventListener("mousedown", function () {
-          risposteCorretteDate += 1;
-          arr.splice(rnd, 1);
-         
-          scegliEMostraDomanda(arr);
-          return 0;
-        });
-      }
-    }
-    //i buttons che contengono le risposte sbagliate
-    
-     
-       answers[1-j].addEventListener("mousedown", function () {
-         arr.splice(rnd, 1);
-         
-         scegliEMostraDomanda(arr);
-         return 0;
-       });
-    
-    
-    
-    
-    
-    
-      }
-    }
-
-    //tolgo la domanda dall'array delle domande per evitare che ricompaia dopo
-
-
-function verificaTuttiDiversi(arr) {
-  //caso array non vuoto
-
-  for (let u of arr) {
-    if (arr.indexOf(u) < arr.lastIndexOf(u)) {
-      //se ci sono due copie di u in arr
-      return false;
-    }
   }
-  return true;
 }
 
 function withoutClones(n) {
+  //ritorna un array di n elementi casuali ciascuno con valore da 0 a n-1, tutti diversi
   let arr = [];
   let i = 0;
   while (i < n) {
@@ -228,6 +204,37 @@ function withoutClones(n) {
   }
   return arr;
 }
+
+function verificaTuttiDiversi(arr) {
+  //prende un array di lunghezza almeno 1 e verifica se i suoi elementi sono tutti diversi
+  for (let u of arr) {
+    if (arr.indexOf(u) < arr.lastIndexOf(u)) {
+      //se ci sono due copie di u in arr
+      return false;
+    }
+  }
+  return true;
+}
+
+
+
+
+
+
+
+/*document.cookie
+'name=6'
+let Mariello=document.cookie;
+undefined
+var x = "Una nuova stringa".charAt(2);
+undefined
+Mariello.charAt(5)
+'6'
+eval(Mariello.charAt(5))
+6*/
+
+
+//orologio
 
 // TIPS:
 
@@ -246,3 +253,4 @@ function withoutClones(n) {
 // Come calcolare il risultato? Hai due strade:
 // Se stai mostrando tutte le domande nello stesso momento, controlla semplicemente se i radio button selezionati sono === correct_answer
 // Se stai mostrando una domanda alla volta, aggiungi semplicemente un punto alla variabile del punteggio che hai precedentemente creato SE la risposta selezionata è === correct_answer
+
