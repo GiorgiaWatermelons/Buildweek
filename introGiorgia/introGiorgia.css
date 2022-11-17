@@ -1,26 +1,89 @@
-div{
-    background-color: red;
-    width: 3rem;
-    height: 3rem;
+:root {
+    text-align: center;
+}
 
+body {
+    margin: 0;
+    background-color: black;
+}
+/**gli elementi fondamentali */
+#prof {
+    margin-top: 15rem;
+    margin-bottom: 4rem;
+    height: 15rem;
+    border-radius: 50%;
+    border-style: dashed;
+    border-color: burlywood;
+}
+#speech{
+    
+    background-color: blue;
+    border-style: dotted;
+    border-width: 0.5rem;
+    border-color: white;
+    margin-bottom: 5rem;
+    height: 100%;
 }
 
 
-.translateEl{
-    animation: changeColor 3s linear infinite forwards; 
+#selezione{
+    background-color: white;
+    border-style: dotted;
+    border-width: 0.5rem;
+    border-color: white;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-@keyframes changeColor{
-0%{
-    background-color: red;
+div p{
+    font-size: 1.5rem;
+}
+#divProf{
+    height: 500px;
+}
+/**classi usate */
+.speechFinale {
+    margin-top: 5rem;
+    width: 20rem;
+    height: 20rem;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
-50%{ background-color: aqua;
-
+.transition {
+    transition: 1s;
+}
+.transition2{
+    transition: 4s;
+}
+.disappeared {
+    filter: brightness(0);
 }
 
-100%{
-background-color: red;
+.center {
+    margin-left: auto;
+    margin-right:auto;
+    width: 50%;
+    padding: 10px;
 }
+
+.translateEl {
+    animation: changeColor 3s linear infinite forwards;
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: aqua;
+
+    }
+
+    100% {
+        background-color: red;
+    }
 
 }
