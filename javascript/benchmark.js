@@ -163,9 +163,7 @@ function scegliEMostraDomanda(arr) {
   }
   //sistemo il div footer
 
-  document.getElementsByClassName(
-    "footer"
-  )[0].innerHTML = `QUESTION ${nDomanda}/10`;
+  document.getElementById("questionNumber").innerHTML = `${nDomanda}`;
   //scelgo una domanda e sistemo il testo domanda
   let rnd = Math.round(Math.random() * (arr.length - 1));
   domanda = arr[rnd]; //domanda contiene la domanda attuale!
