@@ -104,6 +104,7 @@ window.risposteCorretteDate = 0;
 let nDomande = 10;
 let nDomanda = 0;
 let domanda;
+let risposteCorrette=[];
 
 //##### USO DELLE FUNZIONI PER FUNZIONAMENTO DELLA PAGINA #####
 
@@ -134,6 +135,8 @@ function getIndiceRispostaEsatta(q) {
 function addTorisposteCorretteDate() {
   console.log("Esatto!");
   risposteCorretteDate += 1;
+  risposteCorrette[risposteCorrette.length] = document.getElementById("questionNumber").innerHTML+": " +answers[getIndiceRispostaEsatta(domanda)].innerHTML;
+
 }
 
 function rimuoviDomanda(q, arr) {

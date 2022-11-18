@@ -10,7 +10,7 @@ button.addEventListener("click", function()
         window.location.href = "../benchmark.html"; 
     }
 else{
-    alert("Ricordati di spuntare la checkbox, VERGOGNA!!!")
+        alert("Ricordati di spuntare la checkbox");
 }
 
 
